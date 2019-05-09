@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */; };
+		C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973733E227110DB00DDDCDE /* AppDelegate.swift */; };
+		C9737341227110DB00DDDCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9737340227110DB00DDDCDE /* ViewController.swift */; };
+		C9737344227110DB00DDDCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9737342227110DB00DDDCDE /* Main.storyboard */; };
+		C9737346227110DD00DDDCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9737345227110DD00DDDCDE /* Assets.xcassets */; };
+		C9737349227110DD00DDDCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */; };
+		C97373522271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97373512271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg */; };
+		C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */; };
+		C99D6F2022751894009A1E90 /* OrderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */; };
+		C99D6F222283A0F5009A1E90 /* file-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C99D6F212283A0F4009A1E90 /* file-1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSelectionViewController.swift; sourceTree = "<group>"; };
+		C973733B227110DB00DDDCDE /* Flykeart App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flykeart App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C973733E227110DB00DDDCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9737340227110DB00DDDCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9737343227110DB00DDDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9737345227110DD00DDDCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9737348227110DD00DDDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C973734A227110DD00DDDCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C97373512271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNADJUSTEDNONRAW_thumb_1.jpg; path = "../../../../../Pictures/Photos Library.photoslibrary/resources/proxies/derivatives/00/00/1/UNADJUSTEDNONRAW_thumb_1.jpg"; sourceTree = "<group>"; };
+		C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAttendantViewController.swift; sourceTree = "<group>"; };
+		C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellTableViewCell.swift; sourceTree = "<group>"; };
+		C99D6F212283A0F4009A1E90 /* file-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "file-1.png"; path = "../../../../../Downloads/Logos/file-1.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9737338227110DB00DDDCDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9737332227110DB00DDDCDE = {
+			isa = PBXGroup;
+			children = (
+				C973733D227110DB00DDDCDE /* Flykeart App */,
+				C973733C227110DB00DDDCDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C973733C227110DB00DDDCDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C973733B227110DB00DDDCDE /* Flykeart App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C973733D227110DB00DDDCDE /* Flykeart App */ = {
+			isa = PBXGroup;
+			children = (
+				C97373502271123D00DDDCDE /* Media */,
+				C973733E227110DB00DDDCDE /* AppDelegate.swift */,
+				C9737340227110DB00DDDCDE /* ViewController.swift */,
+				C9737342227110DB00DDDCDE /* Main.storyboard */,
+				C9737345227110DD00DDDCDE /* Assets.xcassets */,
+				C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */,
+				C973734A227110DD00DDDCDE /* Info.plist */,
+				C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */,
+				C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */,
+				C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */,
+			);
+			path = "Flykeart App";
+			sourceTree = "<group>";
+		};
+		C97373502271123D00DDDCDE /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				C99D6F212283A0F4009A1E90 /* file-1.png */,
+				C97373512271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C973733A227110DB00DDDCDE /* Flykeart App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C973734D227110DD00DDDCDE /* Build configuration list for PBXNativeTarget "Flykeart App" */;
+			buildPhases = (
+				C9737337227110DB00DDDCDE /* Sources */,
+				C9737338227110DB00DDDCDE /* Frameworks */,
+				C9737339227110DB00DDDCDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flykeart App";
+			productName = "Flykeart App";
+			productReference = C973733B227110DB00DDDCDE /* Flykeart App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9737333227110DB00DDDCDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Federico Brandt";
+				TargetAttributes = {
+					C973733A227110DB00DDDCDE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = C9737336227110DB00DDDCDE /* Build configuration list for PBXProject "Flykeart App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9737332227110DB00DDDCDE;
+			productRefGroup = C973733C227110DB00DDDCDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C973733A227110DB00DDDCDE /* Flykeart App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9737339227110DB00DDDCDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9737349227110DD00DDDCDE /* LaunchScreen.storyboard in Resources */,
+				C9737346227110DD00DDDCDE /* Assets.xcassets in Resources */,
+				C99D6F222283A0F5009A1E90 /* file-1.png in Resources */,
+				C97373522271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg in Resources */,
+				C9737344227110DB00DDDCDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9737337227110DB00DDDCDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9737341227110DB00DDDCDE /* ViewController.swift in Sources */,
+				C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */,
+				C99D6F2022751894009A1E90 /* OrderCellTableViewCell.swift in Sources */,
+				C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */,
+				C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C9737342227110DB00DDDCDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9737343227110DB00DDDCDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9737348227110DD00DDDCDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C973734B227110DD00DDDCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C973734C227110DD00DDDCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C973734E227110DD00DDDCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Flykeart App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.FedericoBrandt-.Flykeart-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C973734F227110DD00DDDCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Flykeart App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.FedericoBrandt-.Flykeart-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9737336227110DB00DDDCDE /* Build configuration list for PBXProject "Flykeart App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C973734B227110DD00DDDCDE /* Debug */,
+				C973734C227110DD00DDDCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C973734D227110DD00DDDCDE /* Build configuration list for PBXNativeTarget "Flykeart App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C973734E227110DD00DDDCDE /* Debug */,
+				C973734F227110DD00DDDCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9737333227110DB00DDDCDE /* Project object */;
+}
