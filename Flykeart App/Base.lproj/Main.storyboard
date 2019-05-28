@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -139,7 +139,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Submit Order"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="YPz-oC-0ZV"/>
+                                    <action selector="submitOrderPressed:" destination="1aA-0J-X8j" eventType="touchUpInside" id="G33-DG-RxH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8y-R5-I1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642.1875" y="17.578125"/>
+            <point key="canvasLocation" x="1102" y="18"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -225,7 +225,6 @@
                                 <state key="normal" title="Flight Attendant View"/>
                                 <connections>
                                     <action selector="FAViewClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6x-OB-Vcn"/>
-                                    <segue destination="GAg-n7-gUs" kind="presentation" id="hMN-qE-O7W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDa-t3-r87">
@@ -248,7 +247,6 @@
                                 <state key="normal" title="Get Meal"/>
                                 <connections>
                                     <action selector="getMealClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2H-5c-FQE"/>
-                                    <segue destination="1aA-0J-X8j" kind="presentation" id="mW8-d4-MCQ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo For Main" translatesAutoresizingMaskIntoConstraints="NO" id="Vpp-yU-W1Q">
@@ -265,11 +263,13 @@
                         <outlet property="getMealButton" destination="CCc-HE-GIW" id="g7H-n6-rIF"/>
                         <outlet property="manualModeButton" destination="MNR-oy-Pm3" id="kAv-tS-S6I"/>
                         <outlet property="nameTextField" destination="YEU-Z1-7hS" id="JyL-g7-KnE"/>
+                        <segue destination="GAg-n7-gUs" kind="show" identifier="toFlightAttendantView" id="EPz-nd-ESN"/>
+                        <segue destination="1aA-0J-X8j" kind="show" identifier="toMenuSelectionView" id="l59-Lr-DAi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238.28125" y="17.578125"/>
+            <point key="canvasLocation" x="134" y="-71"/>
         </scene>
         <!--Flight Attendant View Controller-->
         <scene sceneID="lnp-rr-Dwd">
@@ -432,7 +432,6 @@
                                 <state key="normal" title="Go Back"/>
                                 <connections>
                                     <action selector="goBackClicked:" destination="GAg-n7-gUs" eventType="touchUpInside" id="DzI-fy-ZVk"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="e7y-bh-V1d"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pretzels Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYV-c6-uEq">
@@ -469,14 +468,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo For Main" width="360" height="89"/>
-        <image name="None" width="512" height="512"/>
+        <image name="Logo For Main" width="1500" height="371"/>
+        <image name="None" width="256" height="256"/>
         <image name="Peanuts" width="510" height="340"/>
-        <image name="Pretzel" width="721.91998291015625" height="480"/>
+        <image name="Pretzel" width="1002.6666870117188" height="666.66668701171875"/>
         <image name="SodaCan" width="500" height="500"/>
         <image name="WaterBottle" width="1024" height="1024"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="e7y-bh-V1d"/>
-    </inferredMetricsTieBreakers>
 </document>

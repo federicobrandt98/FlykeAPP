@@ -15,8 +15,12 @@ class MealSelectionViewController: UIViewController{
     @IBOutlet weak var selectedDrinkLabel: UILabel!
     @IBOutlet weak var selectedSnackLabel: UILabel!
     
+    //Submit Order Button
+    @IBOutlet weak var submitOrderButton: UIButton!
+    
     //Water Button
     @IBOutlet weak var waterBottleButton: UIButton!
+    
     @IBAction func waterBottleClicked(_ sender: Any) {
         selectedDrinkLabel.text = "Water"
         self.drinkChoice = selectedSnackLabel.text!
@@ -124,13 +128,18 @@ class MealSelectionViewController: UIViewController{
             selectedSnackLabel.text = ""
         }
     }
-    //Submit Order Button
-    @IBOutlet weak var submitOrderButton: UIButton!
-    
-    
     
     @IBAction func GoBackTest(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //Order submitted
+    @IBAction func submitOrderPressed(_ sender: Any) {
+        
+        FirebaseClient.uploadMenuSelection(seat: self.seat, name: self.name, snack: self.selectedSnackLabel.text!, drink: self.selectedDrinkLabel.text!)
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     //Get Seat From first Window
@@ -157,7 +166,6 @@ class MealSelectionViewController: UIViewController{
         peanutsButton.layer.cornerRadius = 0.5 * peanutsButton.bounds.size.width
         noneButtonS.layer.cornerRadius = 0.5 * noneButtonS.bounds.size.width
         submitOrderButton.layer.cornerRadius = 15
-
         
         //Initiate Labels
         selectedDrinkLabel.text = ""
@@ -193,14 +201,5 @@ class MealSelectionViewController: UIViewController{
             self.present(nameAlert, animated: true, completion: nil)
         }
     }
-/*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 
 }

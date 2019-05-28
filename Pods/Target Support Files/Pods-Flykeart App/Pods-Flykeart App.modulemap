@@ -1,0 +1,6 @@
+framework module Pods_Flykeart_App {
+  umbrella header "Pods-Flykeart App-umbrella.h"
+
+  export *
+  module * { export * }
+}

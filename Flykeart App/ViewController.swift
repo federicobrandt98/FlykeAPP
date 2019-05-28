@@ -25,19 +25,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var getOrderClicked = false
     var FAViewClicked = false
     
+    @IBOutlet weak var manualModeButton: UIButton!
+    
+    @IBOutlet weak var flightAttendantButton: UIButton!
+    
     @IBOutlet weak var SeatScroller: UIPickerView!
     
     @IBOutlet weak var getMealButton: UIButton!
     @IBAction func getMealClicked(_ sender: Any) {
         FAViewClicked = false
         getOrderClicked = true
+        
+        performSegue(withIdentifier: "toMenuSelectionView", sender: nil)
+        
     }
-    
-    @IBOutlet weak var manualModeButton: UIButton!
-    
-    //Flight Attendant Button
-    @IBOutlet weak var flightAttendantButton: UIButton!
-    
+
     @IBAction func FAViewClicked(_ sender: Any) {
         FAViewClicked = true
         getOrderClicked = false
@@ -47,9 +49,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.snackChoice = ""
         
         sortArray(Orders: self.Orders)
+        
+        performSegue(withIdentifier: "toFlightAttendantView", sender: nil)
+        
     }
-    
-    
     
     @IBAction func doNotDisturb(_ sender:UIButton){
         if nameTextField.text! != ""{
@@ -150,7 +153,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         getOrderClicked = false
         FAViewClicked = false
-        
 
         SeatScroller.reloadAllComponents()
         if self.drinkChoice != "" && self.snackChoice != ""{

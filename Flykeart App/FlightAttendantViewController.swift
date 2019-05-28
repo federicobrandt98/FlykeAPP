@@ -12,13 +12,7 @@ class FlightAttendantViewController: UIViewController {
 
     var seats = [String]()
     
-    @IBAction func goBackClicked(_ sender: Any) {
-    }
     @IBOutlet weak var orderTable: UITableView!
-    
-    
-
-    
     @IBOutlet weak var WaterAmount: UILabel!
     @IBOutlet weak var CokeAmount: UILabel!
     @IBOutlet weak var PeanutsAmount: UILabel!
@@ -34,8 +28,8 @@ class FlightAttendantViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC : ViewController = segue.destination as! ViewController
-        destVC.Orders = orders
-        destVC.seats = seats
+        destVC.Orders = self.orders
+        destVC.seats = self.seats
     }
     
     override func viewDidLoad() {
@@ -45,7 +39,13 @@ class FlightAttendantViewController: UIViewController {
         orderTable.dataSource = self
         orderTable.delegate = self
         printArray(Orders: orders)
-        // Do any additional setup after loading the view.
+        
+        // Call client to download data containing the current list of orders
+        FirebaseClient.getCurrentOrders()
+    }
+    
+    @IBAction func goBackClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func printArray(Orders: [ViewController.Order]){
@@ -94,16 +94,6 @@ class FlightAttendantViewController: UIViewController {
         PretzelsAmount.text = String(pretzelsAmount)
         PeanutsAmount.text = String(peanutsAmount)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
