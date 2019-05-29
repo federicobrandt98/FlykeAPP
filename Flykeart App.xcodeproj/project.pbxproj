@@ -18,6 +18,7 @@
 		C99D6F2022751894009A1E90 /* OrderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */; };
 		FFD38AE9229DD2C2004BFE2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */; };
 		FFD38AEB229DD383004BFE2E /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD38AEA229DD383004BFE2E /* FirebaseClient.swift */; };
+		FFFDA293229EC62C00D0C4B7 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA292229EC62C00D0C4B7 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +32,12 @@
 		C9737345227110DD00DDDCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9737348227110DD00DDDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C973734A227110DD00DDDCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C97373512271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNADJUSTEDNONRAW_thumb_1.jpg; path = "../../../../../Pictures/Photos Library.photoslibrary/resources/proxies/derivatives/00/00/1/UNADJUSTEDNONRAW_thumb_1.jpg"; sourceTree = "<group>"; };
 		C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAttendantViewController.swift; sourceTree = "<group>"; };
 		C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellTableViewCell.swift; sourceTree = "<group>"; };
-		C99D6F212283A0F4009A1E90 /* file-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "file-1.png"; path = "../../../../../Downloads/Logos/file-1.png"; sourceTree = "<group>"; };
 		F59A0B64ECF5C26E34D18A63 /* Pods_Flykeart_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flykeart_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFD38AEA229DD383004BFE2E /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		FFFDA292229EC62C00D0C4B7 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */,
-				C97373502271123D00DDDCDE /* Media */,
 				C973733E227110DB00DDDCDE /* AppDelegate.swift */,
 				C9737340227110DB00DDDCDE /* ViewController.swift */,
 				C9737342227110DB00DDDCDE /* Main.storyboard */,
@@ -102,17 +101,9 @@
 				C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */,
 				C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */,
 				FFD38AEA229DD383004BFE2E /* FirebaseClient.swift */,
+				FFFDA292229EC62C00D0C4B7 /* Order.swift */,
 			);
 			path = "Flykeart App";
-			sourceTree = "<group>";
-		};
-		C97373502271123D00DDDCDE /* Media */ = {
-			isa = PBXGroup;
-			children = (
-				C99D6F212283A0F4009A1E90 /* file-1.png */,
-				C97373512271124B00DDDCDE /* UNADJUSTEDNONRAW_thumb_1.jpg */,
-			);
-			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +237,7 @@
 				C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */,
 				C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */,
 				FFD38AEB229DD383004BFE2E /* FirebaseClient.swift in Sources */,
+				FFFDA293229EC62C00D0C4B7 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

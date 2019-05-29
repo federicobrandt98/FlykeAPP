@@ -139,14 +139,11 @@ class MealSelectionViewController: UIViewController{
         FirebaseClient.uploadMenuSelection(seat: self.seat, name: self.name, snack: self.selectedSnackLabel.text!, drink: self.selectedDrinkLabel.text!)
         
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     //Get Seat From first Window
     var name: String = ""
     var seat: String = ""
-    var orderArray = [ViewController.Order]()
-    var seatList = [String]()
     
     var snackChoice: String = ""
     var drinkChoice: String = ""
@@ -177,15 +174,8 @@ class MealSelectionViewController: UIViewController{
         let destVC : ViewController = segue.destination as! ViewController
         if  selectedDrinkLabel.text! != ""{
             if  selectedSnackLabel.text! != ""{
-                
-                seatList.remove(at: Int(self.seatList.index(of: self.seat)!))
-                
                 destVC.name = self.name
                 destVC.seat = self.seat
-                destVC.drinkChoice = selectedDrinkLabel.text!
-                destVC.snackChoice = selectedSnackLabel.text!
-                destVC.Orders = orderArray
-                destVC.seats = seatList
             }
             else{
                 let seatAlert = UIAlertController(title: "Please Choose a Snack", message: nil, preferredStyle: UIAlertController.Style.alert)

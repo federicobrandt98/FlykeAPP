@@ -13,6 +13,7 @@ class FlightAttendantViewController: UIViewController {
     var seats = [String]()
     
     @IBOutlet weak var orderTable: UITableView!
+    
     @IBOutlet weak var WaterAmount: UILabel!
     @IBOutlet weak var CokeAmount: UILabel!
     @IBOutlet weak var PeanutsAmount: UILabel!
@@ -23,45 +24,41 @@ class FlightAttendantViewController: UIViewController {
     var peanutsAmount = 0
     var pretzelsAmount = 0
     
-    var orders = [ViewController.Order]()
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC : ViewController = segue.destination as! ViewController
-        destVC.Orders = self.orders
-        destVC.seats = self.seats
-    }
+    var orderList : [Order] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTotal()
-
+        
         orderTable.dataSource = self
         orderTable.delegate = self
-        printArray(Orders: orders)
+        super.view.addSubview(orderTable)
         
-        // Call client to download data containing the current list of orders
-        FirebaseClient.getCurrentOrders()
+        loadTotal()
+        loadOrders()
+        loadNewOrder()
+        
+        orderTable.dataSource = self
+        orderTable.delegate = self
     }
     
     @IBAction func goBackClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func printArray(Orders: [ViewController.Order]){
-        print("Flight Attendant Orders")
-        if Orders.count != 0{
-            for order in Orders{
-                print(order.name)
-                print(order.seat)
-                print(order.drinkChoice)
-                print(order.snackChoice)
-                print("\n")
-            }
-        }
-        else{
-            print("None\n")
-        }
+    private func loadOrders() {
+        FirebaseClient.getCurrentOrders(completion: {(result) in
+            guard let newOrder = result else {return}
+            self.orderList.append(newOrder)
+            self.orderTable.reloadData()
+        })
+    }
+    
+    private func loadNewOrder() {
+        FirebaseClient.getNewOrder(completion: {(result) in
+            guard let newOrder = result else {return}
+            self.orderList.append(newOrder)
+            self.orderTable.reloadData()
+        })
     }
 
     func loadTotal(){
@@ -71,8 +68,8 @@ class FlightAttendantViewController: UIViewController {
         peanutsAmount = 0
         pretzelsAmount = 0
         
-        if orders.count != 0{
-            for order in self.orders{
+        if orderList.count != 0{
+            for order in self.orderList{
                 
                 if order.drinkChoice == "Water"{
                     waterAmount += 1
@@ -99,26 +96,19 @@ class FlightAttendantViewController: UIViewController {
 
 extension FlightAttendantViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        return orderList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = orders[indexPath.row].name
-        let seat = orders[indexPath.row].seat
-        let drink = orders[indexPath.row].drinkChoice
-        let snack = orders[indexPath.row].snackChoice
         
-        let cell = orderTable.dequeueReusableCell(withIdentifier: "Order")! as! OrderCellTableViewCell
-        
-        cell.nameInOrder.text = name
-        cell.seatInOrder.text = seat
-        cell.drinkInOrder.text = drink
-        cell.snackInOrder.text = snack
-        cell.serveButton.layer.cornerRadius = 15
+        let cell = orderTable.dequeueReusableCell(withIdentifier: "OrderCell")! as! OrderCellTableViewCell
         
         if let btnServe = cell.contentView.viewWithTag(101) as? UIButton{
             btnServe.addTarget(self, action: #selector(deleteRow(_ :)), for: .touchUpInside)
         }
+        
+        let info = orderList[indexPath.row]
+        cell.setUpCell(withInfo : info)
         
         return cell
     }
@@ -128,7 +118,7 @@ extension FlightAttendantViewController: UITableViewDelegate,UITableViewDataSour
         guard let indexPath = orderTable.indexPathForRow(at: point) else{
             return
         }
-        orders.remove(at: indexPath.row)
+        orderList.remove(at: indexPath.row)
         orderTable.deleteRows(at: [indexPath], with: .left)
         loadTotal()
         
