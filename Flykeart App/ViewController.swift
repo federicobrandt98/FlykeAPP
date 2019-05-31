@@ -33,9 +33,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.getMealButton.layer.cornerRadius = 15
-        self.manualModeButton.layer.cornerRadius = 15
-        self.flightAttendantButton.layer.cornerRadius = 15
+        self.getMealButton.layer.borderWidth = 0.3
+        self.getMealButton.layer.borderColor = UIColor.black.cgColor
+        
+        self.flightAttendantButton.layer.borderWidth = 0.3
+        self.flightAttendantButton.layer.borderColor = UIColor.black.cgColor
+        
+        self.manualModeButton.layer.borderWidth = 0.3
+        self.manualModeButton.layer.borderColor = UIColor.black.cgColor
         
         SeatScroller.reloadAllComponents()
     }
