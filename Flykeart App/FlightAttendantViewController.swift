@@ -34,8 +34,7 @@ class FlightAttendantViewController: UIViewController {
         super.view.addSubview(orderTable)
         
         loadTotal()
-        loadOrders()
-        loadNewOrder()
+        loadNewOrders()
         
         orderTable.dataSource = self
         orderTable.delegate = self
@@ -45,16 +44,8 @@ class FlightAttendantViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    private func loadOrders() {
-        FirebaseClient.getCurrentOrders(completion: {(result) in
-            guard let newOrder = result else {return}
-            self.orderList.append(newOrder)
-            self.orderTable.reloadData()
-        })
-    }
-    
-    private func loadNewOrder() {
-        FirebaseClient.getNewOrder(completion: {(result) in
+    private func loadNewOrders() {
+        FirebaseClient.getNewOrders(completion: {(result) in
             guard let newOrder = result else {return}
             self.orderList.append(newOrder)
             self.orderTable.reloadData()
@@ -118,10 +109,12 @@ extension FlightAttendantViewController: UITableViewDelegate,UITableViewDataSour
         guard let indexPath = orderTable.indexPathForRow(at: point) else{
             return
         }
+        // Delete from firebase
+        FirebaseClient.deleteOrder(seatNumber: orderList[indexPath.row].getSeat())
+        
         orderList.remove(at: indexPath.row)
         orderTable.deleteRows(at: [indexPath], with: .left)
         loadTotal()
-        
     }
 }
 

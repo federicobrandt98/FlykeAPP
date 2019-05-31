@@ -29,41 +29,22 @@ struct FirebaseClient {
     }
     
     // Download the current list of orders as a dictionary
-    static func getCurrentOrders(completion : @escaping (Order?) -> ()) -> Void {
+    // With .observer, we are listening for new orders so the Flight attendant
+    // view is automatically updated
+    static func getNewOrders(completion : @escaping (Order?) -> ()) -> Void {
         
-        currentOrdersRef.observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as! [String : Any]
-            
-            for item in postDict {
-                let order = Order(orderItems: item.value as! [String : String])
-                completion(order)
-            }
-        })
-    }
-    
-    // Download the current list of orders as a dictionary
-    static func getNewOrder(completion : @escaping (Order?) -> ()) -> Void {
+        //MARK: - LISTENERS FIREBASE
         
-        currentOrdersRef.observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as! [String : Any]
+        currentOrdersRef.observe(.childAdded, with: { (snapshot) in
+            let postDict = snapshot.value as! [String : String]
             
-            let item = postDict.keys.sorted().last.map({ ($0, postDict[$0]!) })
-            print(item)
-            completion(nil)
-            
+            let order = Order(orderItems: postDict)
+            completion(order)
         })
     }
     
     // Delete an order from the list
     static func deleteOrder(seatNumber : String) {
-        
-        let orderItem = ["":""]
-        
-        currentOrdersRef.child("\(seatNumber)").updateChildValues(orderItem) { (error, ref) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-        }
+        currentOrdersRef.child("seat-\(seatNumber)").removeValue()
     }
 }
