@@ -105,11 +105,14 @@ class MealSelectionViewController: UIViewController, UICollectionViewDelegate,UI
     }
     
     //Submit Order Button
-    @IBOutlet weak var submitOrderButton: UIButton!
+    
+    @IBAction func submitOrder(_ sender: Any) {
+    }
+    
+    
     @IBAction func goBackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     var selectedDrink : String = ""
     var selectedSnack : String = ""
@@ -147,27 +150,5 @@ class MealSelectionViewController: UIViewController, UICollectionViewDelegate,UI
         selectedSnack = ""
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC : ViewController = segue.destination as! ViewController
-        if  selectedDrink != ""{
-            if  selectedSnack != ""{
-                destVC.name = self.name
-                destVC.seat = self.seat
-            }
-            else{
-                let seatAlert = UIAlertController(title: "Please Choose a Snack", message: nil, preferredStyle: UIAlertController.Style.alert)
-                let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-                seatAlert.addAction(okAction)
-                self.present(seatAlert, animated: true, completion: nil)
-            }
-        }
-        else{
-            let nameAlert = UIAlertController(title: "Please Choose a Drink", message: nil, preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-            nameAlert.addAction(okAction)
-            self.present(nameAlert, animated: true, completion: nil)
-        }
-    }
 
 }

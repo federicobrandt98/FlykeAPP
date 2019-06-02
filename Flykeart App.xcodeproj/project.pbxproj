@@ -11,9 +11,10 @@
 		C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */; };
 		C91A01D622A45E0A003AB993 /* SnackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */; };
 		C91A01D822A45E19003AB993 /* DrinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */; };
+		C91A01DA22A48692003AB993 /* servedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D922A48692003AB993 /* servedViewController.swift */; };
+		C91A01DD22A48A3F003AB993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91A01DB22A48A3F003AB993 /* Main.storyboard */; };
 		C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973733E227110DB00DDDCDE /* AppDelegate.swift */; };
 		C9737341227110DB00DDDCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9737340227110DB00DDDCDE /* ViewController.swift */; };
-		C9737344227110DB00DDDCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9737342227110DB00DDDCDE /* Main.storyboard */; };
 		C9737346227110DD00DDDCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9737345227110DD00DDDCDE /* Assets.xcassets */; };
 		C9737349227110DD00DDDCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */; };
 		C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */; };
@@ -29,10 +30,11 @@
 		C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSelectionViewController.swift; sourceTree = "<group>"; };
 		C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackCollectionViewCell.swift; sourceTree = "<group>"; };
 		C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCollectionViewCell.swift; sourceTree = "<group>"; };
+		C91A01D922A48692003AB993 /* servedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servedViewController.swift; sourceTree = "<group>"; };
+		C91A01DC22A48A3F003AB993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C973733B227110DB00DDDCDE /* Flykeart App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flykeart App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973733E227110DB00DDDCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9737340227110DB00DDDCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C9737343227110DB00DDDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9737345227110DD00DDDCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9737348227110DD00DDDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C973734A227110DD00DDDCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,8 +99,8 @@
 				FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */,
 				C973733E227110DB00DDDCDE /* AppDelegate.swift */,
 				C9737340227110DB00DDDCDE /* ViewController.swift */,
-				C9737342227110DB00DDDCDE /* Main.storyboard */,
 				C9737345227110DD00DDDCDE /* Assets.xcassets */,
+				C91A01DB22A48A3F003AB993 /* Main.storyboard */,
 				C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */,
 				C973734A227110DD00DDDCDE /* Info.plist */,
 				C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */,
@@ -108,6 +110,7 @@
 				FFFDA292229EC62C00D0C4B7 /* Order.swift */,
 				C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */,
 				C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */,
+				C91A01D922A48692003AB993 /* servedViewController.swift */,
 			);
 			path = "Flykeart App";
 			sourceTree = "<group>";
@@ -175,7 +178,7 @@
 				C9737349227110DD00DDDCDE /* LaunchScreen.storyboard in Resources */,
 				FFD38AE9229DD2C2004BFE2E /* GoogleService-Info.plist in Resources */,
 				C9737346227110DD00DDDCDE /* Assets.xcassets in Resources */,
-				C9737344227110DB00DDDCDE /* Main.storyboard in Resources */,
+				C91A01DD22A48A3F003AB993 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +243,7 @@
 				C9737341227110DB00DDDCDE /* ViewController.swift in Sources */,
 				C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */,
 				C99D6F2022751894009A1E90 /* OrderCellTableViewCell.swift in Sources */,
+				C91A01DA22A48692003AB993 /* servedViewController.swift in Sources */,
 				C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */,
 				C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */,
 				FFD38AEB229DD383004BFE2E /* FirebaseClient.swift in Sources */,
@@ -252,10 +256,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C9737342227110DB00DDDCDE /* Main.storyboard */ = {
+		C91A01DB22A48A3F003AB993 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9737343227110DB00DDDCDE /* Base */,
+				C91A01DC22A48A3F003AB993 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
