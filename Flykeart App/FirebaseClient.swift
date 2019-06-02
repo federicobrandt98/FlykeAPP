@@ -24,7 +24,6 @@ struct FirebaseClient {
                 return
             }
             
-            print(ref.child("seat"))
         }
     }
     
@@ -40,6 +39,10 @@ struct FirebaseClient {
             
             let order = Order(orderItems: postDict)
             completion(order)
+        })
+        currentOrdersRef.observe(.childRemoved, with: { (snapshot) in
+            
+            
         })
     }
     

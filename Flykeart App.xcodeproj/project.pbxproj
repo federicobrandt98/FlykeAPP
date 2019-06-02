@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A3FFA349E05897717CD5E82 /* Pods_Flykeart_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59A0B64ECF5C26E34D18A63 /* Pods_Flykeart_App.framework */; };
 		C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */; };
+		C91A01D622A45E0A003AB993 /* SnackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */; };
+		C91A01D822A45E19003AB993 /* DrinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */; };
 		C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973733E227110DB00DDDCDE /* AppDelegate.swift */; };
 		C9737341227110DB00DDDCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9737340227110DB00DDDCDE /* ViewController.swift */; };
 		C9737344227110DB00DDDCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9737342227110DB00DDDCDE /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		47F9FE418F9FEA024F0E9579 /* Pods-Flykeart App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flykeart App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flykeart App/Pods-Flykeart App.debug.xcconfig"; sourceTree = "<group>"; };
 		6DDB7065D169C47B4F9652C9 /* Pods-Flykeart App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flykeart App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flykeart App/Pods-Flykeart App.release.xcconfig"; sourceTree = "<group>"; };
 		C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSelectionViewController.swift; sourceTree = "<group>"; };
+		C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackCollectionViewCell.swift; sourceTree = "<group>"; };
+		C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		C973733B227110DB00DDDCDE /* Flykeart App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flykeart App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973733E227110DB00DDDCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9737340227110DB00DDDCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */,
 				FFD38AEA229DD383004BFE2E /* FirebaseClient.swift */,
 				FFFDA292229EC62C00D0C4B7 /* Order.swift */,
+				C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */,
+				C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */,
 			);
 			path = "Flykeart App";
 			sourceTree = "<group>";
@@ -237,7 +243,9 @@
 				C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */,
 				C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */,
 				FFD38AEB229DD383004BFE2E /* FirebaseClient.swift in Sources */,
+				C91A01D822A45E19003AB993 /* DrinkCollectionViewCell.swift in Sources */,
 				FFFDA293229EC62C00D0C4B7 /* Order.swift in Sources */,
+				C91A01D622A45E0A003AB993 /* SnackCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +392,9 @@
 			baseConfigurationReference = 47F9FE418F9FEA024F0E9579 /* Pods-Flykeart App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZRGYP5HP8;
 				INFOPLIST_FILE = "Flykeart App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,8 +413,9 @@
 			baseConfigurationReference = 6DDB7065D169C47B4F9652C9 /* Pods-Flykeart App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZRGYP5HP8;
 				INFOPLIST_FILE = "Flykeart App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -8,138 +8,111 @@
 
 import UIKit
 
-class MealSelectionViewController: UIViewController{
+class MealSelectionViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var seatLabel: UILabel!
-    @IBOutlet weak var selectedDrinkLabel: UILabel!
-    @IBOutlet weak var selectedSnackLabel: UILabel!
+    
+    @IBOutlet weak var drinkCollectionView: UICollectionView!
+    @IBOutlet weak var snackCollectionView: UICollectionView!
+    
+    let drinks = ["Water","Coke","Diet Coke","Coke Zero","Sprite","Orange Juice","Apple Juice","None"]
+    let drinkImages: [UIImage] = [
+        UIImage(named: "Water")!,
+        UIImage(named: "Coke")!,
+        UIImage(named: "DietCoke")!,
+        UIImage(named: "CokeZero")!,
+        UIImage(named: "Sprite")!,
+        UIImage(named: "OrangeJuice")!,
+        UIImage(named: "AppleJuice")!,
+        UIImage(named: "None")!
+    ]
+    
+    let snacks = ["Peanuts","Biscuits","Oreos","Cashews","Pretzels","Chocolate","None"]
+    let snackImages: [UIImage] = [
+        UIImage(named: "Peanuts")!,
+        UIImage(named: "Biscuits")!,
+        UIImage(named: "Oreos")!,
+        UIImage(named: "Cashews")!,
+        UIImage(named: "Pretzels")!,
+        UIImage(named: "Chocolate")!,
+        UIImage(named: "None")!
+    ]
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == drinkCollectionView{
+            return drinks.count
+        }
+        else{
+            return snacks.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == drinkCollectionView{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "drinkCell", for: indexPath) as! DrinkCollectionViewCell
+            cell.drinkLabel.text = drinks[indexPath.item]
+            cell.drinkImage.image = drinkImages[indexPath.item]
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.borderWidth = 0.5
+            cell.layer.cornerRadius = 10
+            
+            return cell
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "snackCell", for: indexPath) as! SnackCollectionViewCell
+            cell.snackLabel.text = snacks[indexPath.item]
+            cell.snackImage.image = snackImages[indexPath.item]
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.borderWidth = 0.5
+            cell.layer.cornerRadius = 10
+            
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == drinkCollectionView{
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.green.cgColor
+            cell?.layer.borderWidth = 2
+            cell?.layer.cornerRadius = 10
+            self.selectedDrink = drinks[indexPath.item]
+        }
+        else {
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.green.cgColor
+            cell?.layer.borderWidth = 2
+            cell?.layer.cornerRadius = 10
+            self.selectedSnack = snacks[indexPath.item]
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == drinkCollectionView{
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.lightGray.cgColor
+            cell?.layer.borderWidth = 0.5
+            cell?.layer.cornerRadius = 10
+        }
+        else {
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.lightGray.cgColor
+            cell?.layer.borderWidth = 0.5
+            cell?.layer.cornerRadius = 10
+        }
+    }
     
     //Submit Order Button
     @IBOutlet weak var submitOrderButton: UIButton!
-    
-    //Water Button
-    @IBOutlet weak var waterBottleButton: UIButton!
-    
-    @IBAction func waterBottleClicked(_ sender: Any) {
-        selectedDrinkLabel.text = "Water"
-        self.drinkChoice = selectedSnackLabel.text!
-        
-        if waterBottleButton.currentImage == UIImage(named: "WaterBottle"){
-            waterBottleButton.setImage(UIImage(named: "Done"), for: UIControl.State.normal)
-            sodaCanButton.setImage(UIImage(named: "SodaCan"), for: UIControl.State.normal)
-            noneButtonDrinks.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-        }
-        else{
-            waterBottleButton.setImage(UIImage(named: "WaterBottle"), for: UIControl.State.normal)
-            sodaCanButton.setImage(UIImage(named: "SodaCan"), for: UIControl.State.normal)
-            noneButtonDrinks.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            selectedDrinkLabel.text = ""
-        }
-    }
-    //Soda Can Button
-    @IBOutlet weak var sodaCanButton: UIButton!
-    @IBAction func sodaCanClicked(_ sender: Any) {
-        selectedDrinkLabel.text = "Coke"
-        self.drinkChoice = selectedSnackLabel.text!
-        
-        if sodaCanButton.currentImage == UIImage(named: "SodaCan"){
-            sodaCanButton.setImage(UIImage(named: "Done"), for: UIControl.State.normal)
-            noneButtonDrinks.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            waterBottleButton.setImage(UIImage(named: "WaterBottle"), for: UIControl.State.normal)
-        }
-        else{
-            waterBottleButton.setImage(UIImage(named: "WaterBottle"), for: UIControl.State.normal)
-            sodaCanButton.setImage(UIImage(named: "SodaCan"), for: UIControl.State.normal)
-            noneButtonDrinks.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            selectedDrinkLabel.text = ""
-        }
-    }
-    //None Button Drink
-    @IBOutlet weak var noneButtonDrinks: UIButton!
-    @IBAction func noneButtonDClicked(_ sender: Any) {
-        selectedDrinkLabel.text = "None"
-        self.drinkChoice = selectedSnackLabel.text!
-        
-        if noneButtonDrinks.currentImage == UIImage(named: "None"){
-            noneButtonDrinks.setImage(UIImage(named: "Done"), for: UIControl.State.normal)
-            sodaCanButton.setImage(UIImage(named: "SodaCan"), for: UIControl.State.normal)
-            waterBottleButton.setImage(UIImage(named: "WaterBottle"), for: UIControl.State.normal)
-        }
-        else{
-            waterBottleButton.setImage(UIImage(named: "WaterBottle"), for: UIControl.State.normal)
-            sodaCanButton.setImage(UIImage(named: "SodaCan"), for: UIControl.State.normal)
-            noneButtonDrinks.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            selectedDrinkLabel.text = ""
-        }
-    }
-    //Pretzel Button
-    @IBOutlet weak var pretzelButton: UIButton!
-    @IBAction func pretzelClicked(_ sender: Any) {
-        selectedSnackLabel.text = "Pretzels"
-        self.snackChoice = selectedSnackLabel.text!
-        
-        if pretzelButton.currentImage == UIImage(named: "Pretzel"){
-            pretzelButton.setImage(UIImage(named: "Done"), for: UIControl.State.normal)
-            peanutsButton.setImage(UIImage(named: "Peanuts"), for: UIControl.State.normal)
-            noneButtonS.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-        }
-        else{
-            pretzelButton.setImage(UIImage(named: "Pretzel"), for: UIControl.State.normal)
-            peanutsButton.setImage(UIImage(named: "Peanuts"), for: UIControl.State.normal)
-            noneButtonS.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            selectedSnackLabel.text = ""
-        }
-    }
-    
-    //Peanuts Button
-    @IBOutlet weak var peanutsButton: UIButton!
-    @IBAction func peanutsClicked(_ sender: Any) {
-        selectedSnackLabel.text = "Peanuts"
-        self.snackChoice = selectedSnackLabel.text!
-        
-        if peanutsButton.currentImage == UIImage(named: "Peanuts"){
-            pretzelButton.setImage(UIImage(named: "Pretzel"), for: UIControl.State.normal)
-            peanutsButton.setImage(UIImage(named: "Done"), for: UIControl.State.normal)
-            noneButtonS.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-        }
-        else{
-            pretzelButton.setImage(UIImage(named: "Pretzel"), for: UIControl.State.normal)
-            peanutsButton.setImage(UIImage(named: "Peanuts"), for: UIControl.State.normal)
-            noneButtonS.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            selectedSnackLabel.text = ""
-        }
-    }
-    //None Button Snack
-    @IBOutlet weak var noneButtonS: UIButton!
-    @IBAction func noneSClicked(_ sender: Any) {
-        selectedSnackLabel.text = "None"
-        self.snackChoice = selectedSnackLabel.text!
-        
-        if noneButtonS.currentImage == UIImage(named: "None"){
-            pretzelButton.setImage(UIImage(named: "Pretzel"), for: UIControl.State.normal)
-            peanutsButton.setImage(UIImage(named: "Peanuts"), for: UIControl.State.normal)
-            noneButtonS.setImage(UIImage(named: "Done"), for: UIControl.State.normal)
-        }
-        else{
-            pretzelButton.setImage(UIImage(named: "Pretzel"), for: UIControl.State.normal)
-            peanutsButton.setImage(UIImage(named: "Peanuts"), for: UIControl.State.normal)
-            noneButtonS.setImage(UIImage(named: "None"), for: UIControl.State.normal)
-            selectedSnackLabel.text = ""
-        }
-    }
-    
-    @IBAction func GoBackTest(_ sender: Any) {
+    @IBAction func goBackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    //Order submitted
-    @IBAction func submitOrderPressed(_ sender: Any) {
-        
-        FirebaseClient.uploadMenuSelection(seat: self.seat, name: self.name, snack: self.selectedSnackLabel.text!, drink: self.selectedDrinkLabel.text!)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
+    
+    var selectedDrink : String = ""
+    var selectedSnack : String = ""
     
     //Get Seat From first Window
     var name: String = ""
@@ -155,25 +128,30 @@ class MealSelectionViewController: UIViewController{
         nameLabel.text = name
         seatLabel.text = seat
         
-        //Initiate Buttons
-        waterBottleButton.layer.cornerRadius = 0.5 * waterBottleButton.bounds.size.width
-        sodaCanButton.layer.cornerRadius = 0.5 * sodaCanButton.bounds.size.width
-        noneButtonDrinks.layer.cornerRadius = 0.5 * noneButtonDrinks.bounds.size.width
-        pretzelButton.layer.cornerRadius = 0.5 * pretzelButton.bounds.size.width
-        peanutsButton.layer.cornerRadius = 0.5 * peanutsButton.bounds.size.width
-        noneButtonS.layer.cornerRadius = 0.5 * noneButtonS.bounds.size.width
-        submitOrderButton.layer.cornerRadius = 15
+        self.drinkCollectionView.delegate = self
+        self.drinkCollectionView.dataSource = self
+        self.snackCollectionView.delegate = self
+        self.snackCollectionView.dataSource = self
+        
+        var layout1 = self.drinkCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        var layout2 = self.snackCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout1.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout2.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        
+        layout1.minimumInteritemSpacing = 5
+        layout2.minimumInteritemSpacing = 5
         
         //Initiate Labels
-        selectedDrinkLabel.text = ""
-        selectedSnackLabel.text = ""
+        selectedDrink = ""
+        selectedSnack = ""
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC : ViewController = segue.destination as! ViewController
-        if  selectedDrinkLabel.text! != ""{
-            if  selectedSnackLabel.text! != ""{
+        if  selectedDrink != ""{
+            if  selectedSnack != ""{
                 destVC.name = self.name
                 destVC.seat = self.seat
             }
