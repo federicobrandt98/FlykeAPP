@@ -107,6 +107,8 @@ class MealSelectionViewController: UIViewController, UICollectionViewDelegate,UI
     //Submit Order Button
     
     @IBAction func submitOrder(_ sender: Any) {
+        FirebaseClient.uploadMenuSelection(seat: self.seat, name: self.name, snack: self.selectedSnack, drink: self.selectedDrink)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -139,11 +141,16 @@ class MealSelectionViewController: UIViewController, UICollectionViewDelegate,UI
         var layout1 = self.drinkCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         var layout2 = self.snackCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
+        let width = (view.frame.size.width - 20) / 3
+        
         layout1.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         layout2.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         
         layout1.minimumInteritemSpacing = 5
         layout2.minimumInteritemSpacing = 5
+        
+        layout1.itemSize = CGSize(width: width, height: width)
+        layout2.itemSize = CGSize(width: width, height: width)
         
         //Initiate Labels
         selectedDrink = ""

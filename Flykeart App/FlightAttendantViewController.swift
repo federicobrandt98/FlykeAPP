@@ -51,6 +51,7 @@ class FlightAttendantViewController: UIViewController {
             self.orderTable.reloadData()
         })
     }
+    
 
     func loadTotal(){
         
@@ -86,6 +87,7 @@ class FlightAttendantViewController: UIViewController {
 
 
 extension FlightAttendantViewController: UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return orderList.count
     }
@@ -110,6 +112,8 @@ extension FlightAttendantViewController: UITableViewDelegate,UITableViewDataSour
             return
         }
         // Delete from firebase
+        FirebaseClient.uploadServed(seat: orderList[indexPath.item].seat, name: orderList[indexPath.item].name, snack: orderList[indexPath.item].snackChoice, drink: orderList[indexPath.item].drinkChoice)
+        
         FirebaseClient.deleteOrder(seatNumber: orderList[indexPath.row].getSeat())
         
         orderList.remove(at: indexPath.row)

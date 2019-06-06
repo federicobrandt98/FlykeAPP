@@ -13,13 +13,14 @@
 		C91A01D822A45E19003AB993 /* DrinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */; };
 		C91A01DA22A48692003AB993 /* servedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01D922A48692003AB993 /* servedViewController.swift */; };
 		C91A01DD22A48A3F003AB993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91A01DB22A48A3F003AB993 /* Main.storyboard */; };
+		C91A01E122A56730003AB993 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C91A01E022A56730003AB993 /* GoogleService-Info.plist */; };
+		C91A01E322A5A11A003AB993 /* ServedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A01E222A5A11A003AB993 /* ServedTableViewCell.swift */; };
 		C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973733E227110DB00DDDCDE /* AppDelegate.swift */; };
 		C9737341227110DB00DDDCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9737340227110DB00DDDCDE /* ViewController.swift */; };
 		C9737346227110DD00DDDCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9737345227110DD00DDDCDE /* Assets.xcassets */; };
 		C9737349227110DD00DDDCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */; };
 		C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */; };
 		C99D6F2022751894009A1E90 /* OrderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */; };
-		FFD38AE9229DD2C2004BFE2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */; };
 		FFD38AEB229DD383004BFE2E /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD38AEA229DD383004BFE2E /* FirebaseClient.swift */; };
 		FFFDA293229EC62C00D0C4B7 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA292229EC62C00D0C4B7 /* Order.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,8 @@
 		C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		C91A01D922A48692003AB993 /* servedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servedViewController.swift; sourceTree = "<group>"; };
 		C91A01DC22A48A3F003AB993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C91A01E022A56730003AB993 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C91A01E222A5A11A003AB993 /* ServedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServedTableViewCell.swift; sourceTree = "<group>"; };
 		C973733B227110DB00DDDCDE /* Flykeart App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flykeart App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973733E227110DB00DDDCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9737340227110DB00DDDCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		C99D6F1D227508F2009A1E90 /* FlightAttendantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAttendantViewController.swift; sourceTree = "<group>"; };
 		C99D6F1F22751894009A1E90 /* OrderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellTableViewCell.swift; sourceTree = "<group>"; };
 		F59A0B64ECF5C26E34D18A63 /* Pods_Flykeart_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flykeart_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFD38AEA229DD383004BFE2E /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		FFFDA292229EC62C00D0C4B7 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,11 +98,11 @@
 		C973733D227110DB00DDDCDE /* Flykeart App */ = {
 			isa = PBXGroup;
 			children = (
-				FFD38AE8229DD2C2004BFE2E /* GoogleService-Info.plist */,
 				C973733E227110DB00DDDCDE /* AppDelegate.swift */,
 				C9737340227110DB00DDDCDE /* ViewController.swift */,
 				C9737345227110DD00DDDCDE /* Assets.xcassets */,
 				C91A01DB22A48A3F003AB993 /* Main.storyboard */,
+				C91A01E022A56730003AB993 /* GoogleService-Info.plist */,
 				C9737347227110DD00DDDCDE /* LaunchScreen.storyboard */,
 				C973734A227110DD00DDDCDE /* Info.plist */,
 				C907A8AA22726590003C9F15 /* MealSelectionViewController.swift */,
@@ -111,6 +113,7 @@
 				C91A01D522A45E0A003AB993 /* SnackCollectionViewCell.swift */,
 				C91A01D722A45E19003AB993 /* DrinkCollectionViewCell.swift */,
 				C91A01D922A48692003AB993 /* servedViewController.swift */,
+				C91A01E222A5A11A003AB993 /* ServedTableViewCell.swift */,
 			);
 			path = "Flykeart App";
 			sourceTree = "<group>";
@@ -176,7 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9737349227110DD00DDDCDE /* LaunchScreen.storyboard in Resources */,
-				FFD38AE9229DD2C2004BFE2E /* GoogleService-Info.plist in Resources */,
+				C91A01E122A56730003AB993 /* GoogleService-Info.plist in Resources */,
 				C9737346227110DD00DDDCDE /* Assets.xcassets in Resources */,
 				C91A01DD22A48A3F003AB993 /* Main.storyboard in Resources */,
 			);
@@ -243,6 +246,7 @@
 				C9737341227110DB00DDDCDE /* ViewController.swift in Sources */,
 				C973733F227110DB00DDDCDE /* AppDelegate.swift in Sources */,
 				C99D6F2022751894009A1E90 /* OrderCellTableViewCell.swift in Sources */,
+				C91A01E322A5A11A003AB993 /* ServedTableViewCell.swift in Sources */,
 				C91A01DA22A48692003AB993 /* servedViewController.swift in Sources */,
 				C99D6F1E227508F2009A1E90 /* FlightAttendantViewController.swift in Sources */,
 				C907A8AB22726590003C9F15 /* MealSelectionViewController.swift in Sources */,

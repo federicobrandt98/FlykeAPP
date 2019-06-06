@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    
+    
+    @IBOutlet weak var nameField: UITextField!
     
     //Seat Selection Array
     var seats = ["1A", "1B", "1C", "1D", "1E",
@@ -33,6 +36,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.nameField.delegate = self
+        
         self.getMealButton.layer.borderWidth = 0.3
         self.getMealButton.layer.borderColor = UIColor.black.cgColor
         
@@ -43,6 +48,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.manualModeButton.layer.borderColor = UIColor.black.cgColor
         
         SeatScroller.reloadAllComponents()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return (true)
     }
     
     

@@ -14,6 +14,8 @@ struct FirebaseClient {
     
     static let currentOrdersRef = Database.database().reference().child("CurrentOrders")
     
+    static let servedOrdersRef = Database.database().reference().child("ServedOrders")
+    
     static func uploadMenuSelection(seat: String, name: String, snack: String, drink: String) {
         
         let orderItem = ["seat" : seat, "name" : name, "snack" : snack, "drink" : drink] as [String : Any]
@@ -26,6 +28,21 @@ struct FirebaseClient {
             
         }
     }
+    
+    static func uploadServed(seat: String, name: String, snack: String, drink: String) {
+        
+        let orderItem = ["seat" : seat, "name" : name, "snack" : snack, "drink" : drink] as [String : Any]
+        
+        servedOrdersRef.child("seat-\(seat)").updateChildValues(orderItem) { (error, ref) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+        }
+    }
+    
+    
     
     // Download the current list of orders as a dictionary
     // With .observer, we are listening for new orders so the Flight attendant
@@ -41,8 +58,19 @@ struct FirebaseClient {
             completion(order)
         })
         currentOrdersRef.observe(.childRemoved, with: { (snapshot) in
-            
-            
+        })
+    }
+    
+    static func getServedOrders(completion : @escaping (Order?) -> ()) -> Void {
+        
+        //MARK: - LISTENERS FIREBASE
+        
+        servedOrdersRef.observe(.childAdded, with: { (snapshot) in
+            let postDict = snapshot.value as! [String : String]
+            let order = Order(orderItems: postDict)
+            completion(order)
+        })
+        servedOrdersRef.observe(.childRemoved, with: { (snapshot) in
         })
     }
     

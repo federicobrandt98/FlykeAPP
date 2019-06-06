@@ -11,4 +11,5 @@ import UIKit
 class SnackCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var snackImage: UIImageView!
     @IBOutlet weak var snackLabel: UILabel!
-}
+    
+    }
